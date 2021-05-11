@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang = "fr">
+<html lang="fr">
+
 <head>
     <!-- MetaTags -->
     <meta charset="utf-8">
-    <title>Orinoco - Peluches faits main Cam&eacute;ras vintages meubles chêne</title>
-    <meta name="description"
-        content="Achat vente en ligne de produits rares, artisanaux et d'exception. Venez découvrir notre sélection de peluches faits main, Cam&eacute;ras vintages, Meubles en ch&ecirc;ne !">
+    <title>Orinoco - Cam&eacute;ras vintages et appareils photos argentiques</title>
+    <meta name="description" content="Achat vente en ligne de produits rares, artisanaux et d'exception. Venez découvrir notre sélection de peluches faits main, Cam&eacute;ras vintages, Meubles en ch&ecirc;ne !">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icon_orinoco.png">
 
@@ -63,169 +63,53 @@
         </div>
     </header>
 
-    <!-- Main + h1 -->
+    <!-- Main + h1 for accessibility -->
     <h1 class="invisible my-0 py-0">Orinoco</h1>
     <main class="container-fluid px-4">
 
-        <!-- Section ShopList -->
+        <!-- Section ShopList of articles -->
         <section class="py-5">
+
             <div class="text-center">
-                <h2 class="section-heading text-uppercase h3">Cam&eacute;ras vintages et Appareils photo argentiques</h2>
+                <h2 class="section-heading text-uppercase h3">Cam&eacute;ras vintages et Appareils photo argentiques
+                </h2>
                 <h3 class="section-subheading text-muted h5">
                     Nam, suscipit. Animi nihil quod earum vero nemo! Debitis, alias? Quae temporibus nam minima minus
                     voluptate accusantium esse natus vel, repellendus reiciendis ab eum, at itaque, similique ipsum
                     consequuntur perferendis!
-                    Ex doloremque facilis ipsa quaerat eaque autem, maxime quod neque quae, ducimus suscipit adipisci
-                    commodi? Numquam iusto repellendus provident maxime obcaecati, illo eius debitis assumenda.
-                    Dolorem rem consequuntur nobis explicabo?
                 </h3>
             </div>
 
-            <ul class="row list-unstyled py-5">
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages One">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    One</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
+            <ul id="listArticle" class="row list-unstyled py-5">
+
+                <!-- template for one article only -->
+                <template id="templateArticle">
+                    <li class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <a class="text-reset text-decoration-none" href="products.html">
+
+                                <img id="articleImg" class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages One">
+
+                                <div class="card-body">
+                                    <h4 id="articleTitle" class="card-title text-secondary h3">Cam&eacute;ras-One</h4>
+                                    <h5 id="articlePrice" class="text-dark"><strong>2000,99€</strong></h5>
+                                    <p id="articleDescription" class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card-footer">
+                                    <small class="text-muted">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </small>
+                                </div>
+                            </a>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages Two">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    Two</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages Three">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    Three</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages Four">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    Four</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages Five">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    Five</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="products.html">
-                            <img class="card-img-top" src="img/camera_vintage.jpg" alt="Cam&eacute;ras vintages Six">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="products.html" class="text-secondary h3">Cam&eacute;ras
-                                    Six</a></h4>
-                            <h5 class="text-dark"><strong>24,99€</strong></h5>
-                            <p class="card-text pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                numquam
-                                aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </template>
+                
             </ul>
         </section>
     </main>
@@ -246,6 +130,8 @@
         </div>
     </footer>
 
+    <!-- Javascript -->
+    <script src="shopList.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
