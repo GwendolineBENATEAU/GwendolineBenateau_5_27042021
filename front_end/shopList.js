@@ -36,7 +36,7 @@ function displayArticle(articles) {
     const cloneElt = document.importNode(templateElt.content, true)
     /* console.log(templateElt.content); */
 
-    cloneElt.getElementById("articleImg").src = article.imageUrl;
+    cloneElt.getElementById("articleImage").src = article.imageUrl;
     cloneElt.getElementById("articleTitle").textContent = article.name
     cloneElt.getElementById("articleDescription").textContent = article.description
     cloneElt.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`;

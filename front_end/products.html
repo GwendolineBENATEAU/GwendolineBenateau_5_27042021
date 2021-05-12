@@ -72,28 +72,31 @@
             <!-- Descrition products -->
             <div class="card bg-light">
                 <div class="row px-4 py-4">
+
                     <div class="col-12 col-lg-7 d-flex align-items-center">
-                        <img class="img-fluid" src="img/camera_vintage.jpg" alt="Cam&eacute;ras One">
+                        <img id="productImage" class="img-fluid" src="img/camera_vintage.jpg" alt="Cam&eacute;ras One">
                     </div>
+
                     <div class="col-12 col-lg-5 card-body">
-                        <h2 class="card-title text-secondary h3"><strong>Cam&eacute;ras One</strong></h2>
-                        <h3 class="text-dark h4"><strong>24,99€</strong></h3>
-                        <h4 class="text-muted h6 pt-3"><small>Référence: LOREM</small></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                        <h2 id="productTitle" class="card-title text-secondary h3"><strong>Cam&eacute;ras One</strong></h2>
+                        <h3 id="productPrice" class="text-dark h4"><strong>24,99€</strong></h3>
+                        <h4 id="productReference" class="text-muted h6 pt-3"><small>Référence: LOREM</small></h4>
+                        <p id="productDescription" class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
                             dicta fugit hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur
                             praesentium animi perspiciatis molestias iure, ducimus!</p>
 
                         <form action="">
                             <div class="d-flex align-items-stretch mt-3">
-                                <label class="form-label h6 py-2 pe-2" for="selectOption">Option</label>
-                                <select class="form-select ms-3 w-100" aria-label="S&eacute;lectionner la lentille"
-                                    id="selectOption" required>
+                                <label class="form-label h6 py-2 pe-2" for="selectProduct">Option</label>
+                                <select id="selectProduct" class="form-select ms-3 w-100" aria-label="S&eacute;lectionner la lentille"
+                                    required>
                                     <option value="" selected>Choisissez votre lentille ...</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
+
                             <div class="d-flex mt-3">
                                 <select class="form-select px-4 w-25" aria-label="S&eacute;lectionner la quantité"
                                     required>
@@ -103,7 +106,8 @@
                                     <option value="3">4</option>
                                     <option value="3">5</option>
                                 </select>
-                                <button class="btn btn-danger ms-3 w-100" type="submit">
+
+                                <button id="addProduct" class="btn btn-danger ms-3 w-100" type="submit">
                                     <i class="far fa-cart-arrow-down pe-4"></i>
                                     Ajouter au panier
                                 </button>
