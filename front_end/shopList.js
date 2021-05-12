@@ -1,46 +1,60 @@
+//Affichage dynamique de tous les articles de l'API (cameras) sur la page shopList.html
 
 (async function () {
-    const articles = await getArticles()
 
-    for (article of articles) {
-        const article = articles
-        displayArticle(articles)
+    //création de la promesse dans l'attente de sa résolution
+    const cameras = await getCameras()
+    /* console.log(cameras); */
+
+    //création de la boucle qui permet de parcourir tous les élements (article) du tableau (cameras)
+    for (article of cameras) {
+        const article = cameras
+        displayArticle(cameras)
+        /* console.log(article); */
     }
 })()
 
 
-function getArticles() {
+function getCameras() {
 
+    //accès à l'API avec la méthode fetch et récupération de la promesse avec then et catch
     return fetch("http://localhost:3000/api/cameras")
 
+        //formatage de la réponse au format json
         .then((response) => {
             console.log(response);
             return response.json()
         })
-
-        .then((articles) => {
-            /* console.log(articles); */
-            return articles
+        //récupération des données si la promesse est résolue
+        .then((cameras) => {
+            /* console.log(cameras); */
+            return cameras
         })
-
+        // renvoie une alerte sur l'interface utilisateur si la promesse est rejetée
         .catch((error) => {
             alert('Erreur : ' + err)
         })
 }
 
 
-function displayArticle(articles) {
-    /* console.log(article); */
+function displayArticle(cameras) {
 
-    const templateElt = document.getElementById("templateArticle")
-    const cloneElt = document.importNode(templateElt.content, true)
-    /* console.log(templateElt.content); */
+    //création de l'object templateElement (contenu de la balise template coté html)
+    const templateElement = document.getElementById("templateArticle")
+    /* console.log(templateElement.content); */
 
-    cloneElt.getElementById("articleImage").src = article.imageUrl;
-    cloneElt.getElementById("articleTitle").textContent = article.name
-    cloneElt.getElementById("articleDescription").textContent = article.description
-    cloneElt.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`;
+    //création d'une copie l'object templateElement
+    const cloneElement = document.importNode(templateElement.content, true)
+    /* console.log(cloneElement); */
+
+    //association clone-contenu pour chaque élement à modifier selon #id html
+    cloneElement.getElementById("articleImage").src = article.imageUrl
+    cloneElement.getElementById("articleImage").alt = "cameras vintage " + article.name
+    cloneElement.getElementById("articleTitle").textContent = article.name
+    cloneElement.getElementById("articleDescription").textContent = article.description
+    cloneElement.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`
     /* console.log(article.price); */
 
-    document.getElementById("listArticle").appendChild(cloneElt)
+    //retourne les données modifiées dans le html
+    document.getElementById("listArticle").appendChild(cloneElement)
 }
