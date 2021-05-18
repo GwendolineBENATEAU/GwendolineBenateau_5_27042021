@@ -1,46 +1,46 @@
-//Affichage dynamique de tous les articles de l'API (cameras) sur la page shopList.html
+//-------Affichage dynamique de tous les articles de l'API/cameras sur la page shopList.html-----------
 
-(async function () {
+(async () => {
 
     //création de la promesse dans l'attente de sa résolution
-    const cameras = await getCameras()
-    /* console.log(cameras); */
+    const articles = await getArticles()
+    /* console.log(articles); */
 
-    //création de la boucle qui permet de parcourir tous les élements (article) du tableau (cameras)
-    for (article of cameras) {
-        const article = cameras
-        displayArticle(cameras)
+    //création de la boucle qui permet de parcourir tous les élements (article) du tableau (articles)
+    //et déclaration de la fonction qui va permettre l'affichage dans le DOM
+    for (article of articles) {
         /* console.log(article); */
+        displayArticle()
     }
 })()
 
 
-function getCameras() {
+function getArticles() {
 
-    //accès à l'API avec la méthode fetch et récupération de la promesse avec then et catch
+    //appel à l'API avec la méthode fetch (au lieu de objet XMLHttpRequest pour AJAX) et récupération de la promesse avec then et catch
     return fetch("http://localhost:3000/api/cameras")
 
         //formatage de la réponse au format json
-        .then((response) => {
+        .then(response => {
             console.log(response);
             return response.json()
         })
         //récupération des données si la promesse est résolue
-        .then((cameras) => {
-            /* console.log(cameras); */
-            return cameras
+        .then(articles => {
+            /* console.log(articles); */
+            return articles
         })
-        // renvoie une alerte sur l'interface utilisateur si la promesse est rejetée
-        .catch((error) => {
-            alert('Erreur : ' + err)
+        //renvoie une alerte sur l'interface utilisateur si la promesse est rejetée
+        .catch(error => {
+            alert('Erreur de chargement des données : ' + error)
         })
 }
 
 
-function displayArticle(cameras) {
+function displayArticle() {
 
     //création de l'object templateElement (contenu de la balise template coté html)
-    const templateElement = document.getElementById("templateArticle")
+    const templateElement = document.getElementById("templateArticles")
     /* console.log(templateElement.content); */
 
     //création d'une copie l'object templateElement
@@ -48,13 +48,13 @@ function displayArticle(cameras) {
     /* console.log(cloneElement); */
 
     //association clone-contenu pour chaque élement à modifier selon #id html
-    cloneElement.getElementById("articleImage").src = article.imageUrl
-    cloneElement.getElementById("articleImage").alt = "cameras vintage " + article.name
-    cloneElement.getElementById("articleTitle").textContent = article.name
-    cloneElement.getElementById("articleDescription").textContent = article.description
-    cloneElement.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`
+    cloneElement.getElementById("articlesImage").src = article.imageUrl
+    cloneElement.getElementById("articlesImage").alt = "Cam&eacute;ras vintage " + article.name
+    cloneElement.getElementById("articlesTitle").textContent = article.name
+    cloneElement.getElementById("articlesDescription").textContent = article.description
+    cloneElement.getElementById("articlesPrice").textContent = `${article.price / 100}.00 €`
     /* console.log(article.price); */
 
     //retourne les données modifiées dans le html
-    document.getElementById("listArticle").appendChild(cloneElement)
+    document.getElementById("listArticles").appendChild(cloneElement)
 }
