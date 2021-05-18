@@ -1,60 +1,41 @@
-//-------Affichage dynamique de tous les articles de l'API/cameras sur la page shopList.html-----------
+//-------Affichage dynamique de tous les articles en vente de l'API/cameras sur la page shopList.html-----------
 
-(async () => {
+//création d'une requette HTTP avec la méthode fetch et récupération des réponses avec then et catch
+fetch("http://localhost:3000/api/cameras")
 
-    //création de la promesse dans l'attente de sa résolution
-    const articles = await getArticles()
-    /* console.log(articles); */
+    //formatage de la réponse au format json
+    .then(response => 
+    {
+        console.log(response);
+        return response.json()
+    })
+    
+    //récupération des données si la promesse est résolue
+    .then(data => 
+    {
+        //création de la boucle qui permet de parcourir tous les élements (article) de l'API (data)
+        for (const article of data) 
+        {
+            //création de l'object templateElement (contenu de la balise <template>)
+            const templateElement = document.getElementById("templateArticle")
+            //création d'une copie l'object templateElement
+            const cloneElement = document.importNode(templateElement.content, true)
+            //association clone-contenu pour chaque élement à modifier d'après #id
+            cloneElement.getElementById("articleImage").src = article.imageUrl
+            cloneElement.getElementById("articleImage").alt = "Cam&eacute;ras vintage " + article.name
+            cloneElement.getElementById("articleName").textContent = article.name
+            cloneElement.getElementById("articleDescription").textContent = article.description
+            cloneElement.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`
+            cloneElement.getElementById('articleLink').href = `product.html?id=${article._id}`
+            //retourne les données modifiées dans le DOM
+            document.getElementById("listArticle").appendChild(cloneElement)
+        }
+ 
+    })
+    
+    //renvoie une alerte sur l'interface utilisateur si la promesse est rejetée
+    .catch(error => 
+    {
+        alert("Erreur de chargement des données :\n"+ error)
+    })
 
-    //création de la boucle qui permet de parcourir tous les élements (article) du tableau (articles)
-    //et déclaration de la fonction qui va permettre l'affichage dans le DOM
-    for (article of articles) {
-        /* console.log(article); */
-        displayArticle()
-    }
-})()
-
-
-function getArticles() {
-
-    //appel à l'API avec la méthode fetch (au lieu de objet XMLHttpRequest pour AJAX) et récupération de la promesse avec then et catch
-    return fetch("http://localhost:3000/api/cameras")
-
-        //formatage de la réponse au format json
-        .then(response => {
-            console.log(response);
-            return response.json()
-        })
-        //récupération des données si la promesse est résolue
-        .then(articles => {
-            /* console.log(articles); */
-            return articles
-        })
-        //renvoie une alerte sur l'interface utilisateur si la promesse est rejetée
-        .catch(error => {
-            alert('Erreur de chargement des données : ' + error)
-        })
-}
-
-
-function displayArticle() {
-
-    //création de l'object templateElement (contenu de la balise template coté html)
-    const templateElement = document.getElementById("templateArticles")
-    /* console.log(templateElement.content); */
-
-    //création d'une copie l'object templateElement
-    const cloneElement = document.importNode(templateElement.content, true)
-    /* console.log(cloneElement); */
-
-    //association clone-contenu pour chaque élement à modifier selon #id html
-    cloneElement.getElementById("articlesImage").src = article.imageUrl
-    cloneElement.getElementById("articlesImage").alt = "Cam&eacute;ras vintage " + article.name
-    cloneElement.getElementById("articlesTitle").textContent = article.name
-    cloneElement.getElementById("articlesDescription").textContent = article.description
-    cloneElement.getElementById("articlesPrice").textContent = `${article.price / 100}.00 €`
-    /* console.log(article.price); */
-
-    //retourne les données modifiées dans le html
-    document.getElementById("listArticles").appendChild(cloneElement)
-}
