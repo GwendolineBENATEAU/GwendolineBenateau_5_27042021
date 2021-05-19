@@ -2,7 +2,6 @@
 
 //récupération de l'id (?id=) dans l'URL de la page
 const searchId = new URL(window.location.href).searchParams.get("id")
-console.log(searchId);
 
 //récupération des données du produits à afficher selon cet id
 fetch(`http://localhost:3000/api/cameras/${searchId}`)
@@ -15,6 +14,7 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
 
     .then(data => 
         {
+            //-----------------------Affichage des données produit---------------------
             //récupération et implémentation des données dans le DOM si la promesse est résolue
             document.getElementById("productImage").src = data.imageUrl
             document.getElementById("productImage").alt = "Cam&eacute;ras vintage " + data.name
@@ -24,6 +24,7 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
             document.getElementById("productId").textContent = `Référence : ${searchId}`
 
 
+            //-----------------------Affichage de la personnalisation---------------------
             //création d'une boucle qui permet de personnaliser le produit (option = lense) et implémentation 
             data.lenses.forEach(lense => 
                 {
@@ -32,29 +33,49 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                     productOption.value = `${lense}`
                 })
 
-
-            //Ecoute du bouton Ajouter au panier et récupération des valeurs à envoyer
+            
+            //-----------------------Ajout au panier du produit---------------------
+            //Ecoute du bouton Ajouter au panier et récupération des valeurs pour envoie dans le localStorage
             document.getElementById("addProduct").addEventListener("click", (event)=>
-            {
-                event.preventDefault()
-           
-                const productQuantity = document.getElementById("productQuantity")
-
-                const dataProductSelect =
                 {
-                    productName: data.name,
-                    productId: searchId,
-                    productOption: productOption.value,
-                    productQuantity: productQuantity.value,
-                    productPrice: `${data.price / 100}.00 €`
-                }
-                console.log(dataProductSelect);
-            })
-
-
-            //Stockage des valeurs dans le localStorage
+                    //Bloque la gestion des clics par défaut (chargement de la page)
+                    event.preventDefault()
             
 
+                    //création de l'object qui récupère les valeurs du produit ajouté au panier
+                    const productQuantity = document.getElementById("productQuantity")
+                    const dataProductAdding =
+                    {
+                        productName: data.name,
+                        productId: `${searchId}`,
+                        productOption: productOption.value,
+                        productQuantity: productQuantity.value,
+                        productPrice: `${data.price / 100}.00 €`
+                    }
+
+
+                    //-----------------------Stockage dans le localStorage---------------------
+                    //Stockage et lecture des objects JSON avec les méthodes stringify et parse
+                    let retrieving = JSON.parse(localStorage.getItem("products"))
+
+                    let storing = () =>
+                        {
+                            retrieving.push(dataProductAdding)
+                            localStorage.setItem("products", JSON.stringify(retrieving))
+                        }
+                    
+                    //vérifie la présence de produits dans le localStorage puis (après bouclage) stockage des valeurs des produits supplémentaires 
+                    if (retrieving) 
+                        {
+                            storing();
+                        }
+                    //si pas de produit, création d'un tableau et stockage des valeurs du produit ajouté
+                    else
+                        {
+                            retrieving = [];
+                            storing();
+                        }
+                })
         })
 
     .catch(error => 
