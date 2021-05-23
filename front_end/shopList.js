@@ -1,4 +1,4 @@
-//-------Affichage dynamique de tous les articles en vente de l'API/cameras sur la page shopList.html-----------
+//-------Affichage dynamique de tous les articles disponibles à la vente depuis l'API/cameras-----------
 
 //création d'une requette HTTP avec la méthode fetch et récupération des réponses avec then et catch
 fetch("http://localhost:3000/api/cameras")

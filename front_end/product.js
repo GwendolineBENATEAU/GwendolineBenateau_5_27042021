@@ -1,4 +1,4 @@
-//-------------------Affichage dynamique du produit précédement sélectionné depuis shopList.html et envoi au panier-----------
+//-------------------Affichage dynamique du produit précédement sélectionné depuis shopList.html et envoi au panier après personnalisation-----------
 
 //récupération de l'id (?id=) dans l'URL de la page
 const searchId = new URL(window.location.href).searchParams.get("id")
@@ -56,24 +56,24 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
 
                     //-----------------------Stockage dans le localStorage---------------------
                     //Stockage et lecture des objects JSON avec les méthodes stringify et parse
-                    let retrieving = JSON.parse(localStorage.getItem("products"))
+                    let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
 
-                    let storing = () =>
+                    let storingLocalStorage = () =>
                         {
-                            retrieving.push(dataProductAdding)
-                            localStorage.setItem("products", JSON.stringify(retrieving))
+                            retrievingLocalStorage.push(dataProductAdding)
+                            localStorage.setItem("products", JSON.stringify(retrievingLocalStorage))
                         }
                     
                     //vérifie la présence de produits dans le localStorage puis (après bouclage) stockage des valeurs des produits supplémentaires 
-                    if (retrieving) 
+                    if (retrievingLocalStorage) 
                         {
-                            storing();
+                            storingLocalStorage();
                         }
                     //si pas de produit, création d'un tableau et stockage des valeurs du produit ajouté
                     else
                         {
-                            retrieving = [];
-                            storing();
+                            retrievingLocalStorage = [];
+                            storingLocalStorage();
                         }
                 })
         })
