@@ -50,13 +50,13 @@
                         <a href="#" class="nav-link text-dark disabled text-muted">Contact</a>
                     </li>
                     <li class="nav-item ms-md-3">
-                        <a href="cart.html" class="nav-link text-dark d-md-none">
+                        <a href="cart.html" class="nav-link text-dark d-md-none disabled text-muted">
                             <span>Panier</span>
-                            <i class="far fa-shopping-bag ps-2"></i>
+                            <i class="far fa-shopping-cart ps-2"></i>
                         </a>
-                        <a href="cart.html" class="btn btn-outline-secondary d-none d-md-block text-dark">
+                        <a href="cart.html" class="btn btn-outline-secondary d-none d-md-block text-dark disabled text-muted">
                             <span>Panier</span>
-                            <i class="far fa-shopping-bag ps-2"></i>
+                            <i class="far fa-shopping-cart ps-2"></i>
                         </a>
                     </li>
                 </ul>
@@ -74,28 +74,26 @@
             <div class="card">
                 <div class="row px-4 py-4">
                     <h2 class="card-title text-secondary h3 mb-5"><strong>Récapitulatif de mon panier</strong></h2>
-                    <table class="table table-striped">
+                    <div id="displayEmptyCart" class="invisible"><span>Mon panier est vide</span></div>
+
+                    <table id="displayFullCart" class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Produits</th>
                                 <th scope="col" class="text-center">Quantité</th>
-                                <th scope="col" class="text-end">Prix</th>
-                                <th></th>
+                                <th scope="col" class="text-end">Prix Unitaire</th>
+                                <th scope="col" class="text-end">Prix Total</th>
                             </tr>
                         </thead>
 
-                        <tbody id="listorderedProduct">
+                        <tbody id="listOrderedProducts">
                             <!-- template for one article only -->
-                            <template id="templateOrderedProduct">
+                            <template id="templateOrderedProducts">
                                 <tr>
                                     <td id="orderedProductName" class="w-50">Produit 01</td>
                                     <td id="orderedProductQuantity" class="text-center">1</td>
-                                    <td id="orderedProductPrice" class="text-end">124,90 €</td>
-                                    <td class="text-end">
-                                        <button id="deleteProduct" class="btn btn-sm btn-danger" aria-label="Supprimer">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </td>
+                                    <td id="orderedProductPriceUnit" class="text-end">124,90 €</td>
+                                    <td id="orderedProductPriceTotal" class="text-end">124,90 €</td>
                                 </tr>
                             </template>
                         </tbody>
@@ -103,19 +101,29 @@
                         <tfoot>
                             <tr>
                                 <td></td>
-                                <th>Livraison</th>
-                                <td class="text-end">0,00 €</td>
                                 <td></td>
+                                <td><i>Frais de livraison</i></td>
+                                <td class="text-end"><i>0,00 €</i></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <th><strong>Total</strong></th>
-                                <td class="text-end"><strong>124,90 €</strong></td>
                                 <td></td>
+                                <th >Montant Total</th>
+                                <th id="totalOrderedProducts" class="text-end">124,90 €</th>
                             </tr>
                         </tfoot>
                     </table>
+
+                    <div class="col-12 pt-5">
+                        <button id="deleteOrderedProducts" class="btn btn-danger" aria-label="Supprimer">
+                            <i class="fal fa-trash-alt pe-4"></i>
+                            Supprimer tous les articles
+                        </button>
+                    </div>
+
                 </div>
+
+            </div>
             </div>
 
             <!-- Form order -->
@@ -162,7 +170,10 @@
                             </div>
                         </div>
                         <div class="col-12 pt-5">
-                            <button class="btn btn-success" type="submit" href="order.html">Valider ma commande</button>
+                            <button class="btn btn-success" type="submit" href="order.html">
+                                <i class="fal fa-bags-shopping pe-4"></i>
+                                Valider ma commande
+                            </button>
                         </div>
                     </form>
 

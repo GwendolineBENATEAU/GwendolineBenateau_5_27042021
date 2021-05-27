@@ -25,7 +25,7 @@ fetch("http://localhost:3000/api/cameras")
             cloneElement.getElementById("articleImage").alt = "Cam&eacute;ras vintage " + article.name
             cloneElement.getElementById("articleName").textContent = article.name
             cloneElement.getElementById("articleDescription").textContent = article.description
-            cloneElement.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`
+            cloneElement.getElementById("articlePrice").textContent = article.price / 100 + ".00 €"
             cloneElement.getElementById('articleLink').href = `product.html?id=${article._id}`
             //retourne les données modifiées dans le DOM
             document.getElementById("listArticle").appendChild(cloneElement)
