@@ -1,4 +1,4 @@
-//-------Affichage dynamique de tous les articles en vente de l'API/cameras sur la page shopList.html-----------
+//-------Affichage dynamique de tous les articles disponibles à la vente depuis l'API/cameras-----------
 
 //création d'une requette HTTP avec la méthode fetch et récupération des réponses avec then et catch
 fetch("http://localhost:3000/api/cameras")
@@ -25,7 +25,7 @@ fetch("http://localhost:3000/api/cameras")
             cloneElement.getElementById("articleImage").alt = "Cam&eacute;ras vintage " + article.name
             cloneElement.getElementById("articleName").textContent = article.name
             cloneElement.getElementById("articleDescription").textContent = article.description
-            cloneElement.getElementById("articlePrice").textContent = `${article.price / 100}.00 €`
+            cloneElement.getElementById("articlePrice").textContent = article.price / 100 + ".00 €"
             cloneElement.getElementById('articleLink').href = `product.html?id=${article._id}`
             //retourne les données modifiées dans le DOM
             document.getElementById("listArticle").appendChild(cloneElement)

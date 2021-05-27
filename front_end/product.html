@@ -51,11 +51,11 @@
                     <li class="nav-item ms-md-3">
                         <a href="cart.html" class="nav-link text-dark d-md-none">
                             <span>Panier</span>
-                            <i class="far fa-shopping-bag ps-2"></i>
+                            <i class="far fa-shopping-cart ps-2"></i>
                         </a>
                         <a href="cart.html" class="btn btn-outline-secondary d-none d-md-block text-dark">
                             <span>Panier</span>
-                            <i class="far fa-shopping-bag ps-2"></i>
+                            <i class="far fa-shopping-cart ps-2"></i>
                         </a>
                     </li>
                 </ul>
@@ -85,12 +85,12 @@
                             dicta fugit hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur
                             praesentium animi perspiciatis molestias iure, ducimus!</p>
 
-                        <form action="">
+                        <form>
                             <div class="d-flex align-items-stretch mt-3">
-                                <label class="form-label h6 py-2 pe-2" for="optionProduct">Option</label>
+                                <label class="form-label h6 py-2 pe-2" for="productOption">Option</label>
                                 <select id="productOption" class="form-select ms-3 w-100" aria-label="S&eacute;lectionner la lentille"
                                     required>
-                                    <option selected>Choisissez votre lentille ...</option>
+                                    <option value="" selected>Choisissez votre lentille ...</option>
                                     
                                 </select>
                             </div>
@@ -98,15 +98,16 @@
                             <div class="d-flex mt-3">
                                 <select id="productQuantity" class="form-select px-4 w-25" aria-label="S&eacute;lectionner la quantité"
                                     required>
-                                    <option value="1">1</option>
+                                    <option class="invisible" value="">Quantité</option>
+                                    <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
 
-                                <button id="addProduct" class="btn btn-danger ms-3 w-100" type="submit">
-                                    <i class="far fa-cart-arrow-down pe-4"></i>
+                                <button id="addProduct" class="btn btn-success ms-3 w-100" type="submit">
+                                    <i class="fal fa-shopping-cart pe-4"></i>
                                     Ajouter au panier
                                 </button>
                             </div>
