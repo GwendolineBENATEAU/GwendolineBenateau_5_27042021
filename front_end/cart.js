@@ -5,12 +5,13 @@ let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
 console.log(retrievingLocalStorage)
 
 
-//Affichage d'un texte à la place du panier si le localStorage est vide
+//Affichage d'un texte à la place du panier et masquage du formulaire si le localStorage est vide
 if (retrievingLocalStorage === null) 
 {
     document.querySelector("#displayEmptyCart").className = "visible"
     document.querySelector("#displayFullCart").className = "table table-striped invisible"
     document.querySelector("#deleteOrderedProducts").className = "btn btn-danger invisible"
+    document.querySelector("#orderForm").className = "card card-outline-secondary bg-light my-4 invisible"
 } 
 // Sinon implémentation des produits présents dans le localStorage
 else 
@@ -18,6 +19,7 @@ else
     document.querySelector("#displayEmptyCart").className = "invisible"
     document.querySelector("#displayFullCart").className = "table table-striped visible"
     document.querySelector("#deleteOrderedProducts").className = "btn btn-danger visible"
+    document.querySelector("#orderForm").className = "card card-outline-secondary bg-light my-4 visible"
 
 
     //-----------------------Affichage des produits dans le panier-----------------------
@@ -47,7 +49,6 @@ else
     {
         //intégration dans le tableau des prix totaux (prix unitaire x quantité)
         totalArray.push(dataProductretrieving.productPrice * dataProductretrieving.productQuantity)
-        console.log(totalArray);
     }
         
     //somme des prix totaux obtenus dans le tableau avec la méthode reduce

@@ -90,10 +90,10 @@
                             <!-- template for one article only -->
                             <template id="templateOrderedProducts">
                                 <tr>
-                                    <td id="orderedProductName" class="w-50">Produit 01</td>
+                                    <td id="orderedProductName">Cam&eacute;ras vintages</td>
                                     <td id="orderedProductQuantity" class="text-center">1</td>
-                                    <td id="orderedProductPriceUnit" class="text-end">124,90 €</td>
-                                    <td id="orderedProductPriceTotal" class="text-end">124,90 €</td>
+                                    <td id="orderedProductPriceUnit" class="text-end">0000,00 €</td>
+                                    <td id="orderedProductPriceTotal" class="text-end">0000,00 €</td>
                                 </tr>
                             </template>
                         </tbody>
@@ -109,7 +109,7 @@
                                 <td></td>
                                 <td></td>
                                 <th >Montant Total</th>
-                                <th id="totalOrderedProducts" class="text-end">124,90 €</th>
+                                <th id="totalOrderedProducts" class="text-end">0000,00 €</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -127,7 +127,7 @@
             </div>
 
             <!-- Form order -->
-            <div class="card card-outline-secondary bg-light my-4">
+            <div id = "orderForm" class="card card-outline-secondary bg-light my-4">
                 <div class="row px-4 py-4">
                     <h2 class="card-title text-secondary h3 mb-5"><strong>Nom et adresse de livraison</strong></h2>
 
@@ -137,25 +137,25 @@
                             <input type="text" class="form-control" id="firstName" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="name" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="name" required>
+                            <label for="lastName" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="lastName" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="mail" class="form-label">Email</label>
+                            <label for="email" class="form-label">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                <input type="email" class="form-control" id="mail" required>
+                                <input type="email" class="form-control" id="email" required>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <label for="address" class="form-label">Adresse</label>
                             <input type="text" class="form-control" id="address" required>
                         </div>
-                        <div class="col-md-2">
+                        <!-- <div class="col-md-2">
                             <label for="cp" class="form-label">Code postal</label>
                             <input type="text" minlength="5" class="form-control" id="cp" required>
-                        </div>
+                        </div> -->
                         <div class="col-md-4">
                             <label for="city" class="form-label">Ville</label>
                             <input type="text" class="form-control" id="city" required>
@@ -170,7 +170,7 @@
                             </div>
                         </div>
                         <div class="col-12 pt-5">
-                            <button class="btn btn-success" type="submit" href="order.html">
+                            <button id="validateOrderedForm" class="btn btn-success" type="submit" href="order.html">
                                 <i class="fal fa-bags-shopping pe-4"></i>
                                 Valider ma commande
                             </button>
