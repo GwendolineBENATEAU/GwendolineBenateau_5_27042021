@@ -24,59 +24,85 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
             document.getElementById("productId").textContent = `Référence : ${searchId}`
 
 
-            //-----------------------Affichage de la personnalisation---------------------
+            //-----------------------Affichage des options---------------------
             //Création d'une boucle qui permet de personnaliser le produit (option = lense) et implémentation 
             data.lenses.forEach(lense => 
                 {
                     const productOption = document.createElement("option")
                     document.getElementById("productOption").appendChild(productOption).innerHTML = lense
-                    productOption.value = lense
+                    productOption.value = lense                        
                 })
 
             
             //-----------------------Ajout au panier du produit---------------------
             //Ecoute du bouton Ajouter au panier et récupération des valeurs pour envoie dans le localStorage
             document.getElementById("addProduct").addEventListener("click", (event)=>
+            {
+                //Bloque la gestion des clics par défaut (chargement de la page)
+                event.preventDefault()
+                
+                //Vérifie la selection d'une option (value)
+                if(productOption.value == "") 
                 {
-                    //Bloque la gestion des clics par défaut (chargement de la page)
-                    event.preventDefault()
-            
-                    const productQuantity = document.getElementById("productQuantity")
+                    alert("Veuillez choissir votre lentille");
+                    return false;
+                }
+                else
+                { 
+                    //-----------------------Message de confirmation (ajout panier)--------------------- 
+                    const messageProductAdding = () =>  
+                    { 
+                        if (window.confirm("L'article a bien été ajouté au panier :\n Voir mon panier => OK :\n Continuer mes achats => ANNULER"))  
+                        { 
+                            window.location.href = "cart.html" 
+                        }  
+                        else  
+                        { 
+                            window.location.href = "shopList.html" 
+                        } 
+                    }   
+                    
 
+                    //-----------------------Stockage dans le localStorage---------------------
                     //Création de l'object qui récupère les valeurs du produit ajouté au panier
+                    const productQuantity = document.getElementById("productQuantity")
                     const dataProductAdding =
                     {
                         productName: data.name,
                         productId: searchId,
                         productOption: productOption.value,
                         productQuantity: productQuantity.value,
-                        productPrice: data.price / 100
+                        productPrice: data.price / 100 + ".00 €"
                     }
-
-
-                    //-----------------------Stockage dans le localStorage---------------------
-                    //Stockage et lecture des objects JSON avec les méthodes stringify et parse
+                        
+                    
+                    //Stockage et lecture des objects JSON avec les méthodes stringify (stock) et parse (recupère)
                     let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
-
+                    
                     let storingLocalStorage = () =>
-                        {
-                            retrievingLocalStorage.push(dataProductAdding)
-                            localStorage.setItem("products", JSON.stringify(retrievingLocalStorage))
-                        }
+                    {
+                        retrievingLocalStorage.push(dataProductAdding)
+                        localStorage.setItem("products", JSON.stringify(retrievingLocalStorage))
+                    }
+                    
                     
                     //Vérifie la présence de produits dans le localStorage puis (après bouclage) stockage des valeurs des produits supplémentaires 
                     if (retrievingLocalStorage) 
-                        {
-                            storingLocalStorage();
-                        }
+                    {
+                        storingLocalStorage();
+                        messageProductAdding();
+                    }
                     //si pas de produit, création d'un tableau et stockage des valeurs du produit ajouté
                     else
-                        {
-                            retrievingLocalStorage = [];
-                            storingLocalStorage();
-                        }
-                })
+                    {
+                        retrievingLocalStorage = [];
+                        storingLocalStorage();
+                        messageProductAdding(); 
+                    }
+                }
+            })
         })
+      
 
     .catch(error => 
         {
