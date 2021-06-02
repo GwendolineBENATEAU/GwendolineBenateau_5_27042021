@@ -62,7 +62,7 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                         } 
                     }   
                     
-                    
+
                     //-----------------------Stockage dans le localStorage---------------------
                     //Création de l'object qui récupère les valeurs du produit ajouté au panier
                     const productQuantity = document.getElementById("productQuantity")
@@ -74,34 +74,33 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                         productQuantity: productQuantity.value,
                         productPrice: data.price / 100 + ".00 €"
                     }
-                                        
+                        
+                    
                     //Stockage et lecture des objects JSON avec les méthodes stringify (stock) et parse (recupère)
-                    let retrievingLocalStorage = JSON.parse(localStorage.getItem("product_id"))
+                    let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
                     
                     let storingLocalStorage = () =>
                     {
                         retrievingLocalStorage.push(dataProductAdding)
-                        localStorage.setItem("product_id", JSON.stringify(retrievingLocalStorage))
+                        localStorage.setItem("products", JSON.stringify(retrievingLocalStorage))
                     }
+                    
                     
                     //Vérifie la présence de produits dans le localStorage puis (après bouclage) stockage des valeurs des produits supplémentaires 
                     if (retrievingLocalStorage) 
                     {
                         storingLocalStorage();
                         messageProductAdding();
-                        
                     }
                     //si pas de produit, création d'un tableau et stockage des valeurs du produit ajouté
                     else
                     {
                         retrievingLocalStorage = [];
                         storingLocalStorage();
-                        messageProductAdding();
-                        
+                        messageProductAdding(); 
                     }
                 }
             })
-            
         })
       
 

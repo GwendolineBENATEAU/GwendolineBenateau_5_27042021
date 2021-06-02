@@ -1,7 +1,7 @@
 //-------------------Affichage dynamique du panier contenant les produits précédement sélectionnés-----------
 
 //Récupération du contenu du localStorage en vue de son implémentation 
-let retrievingLocalStorage = JSON.parse(localStorage.getItem("product_id"))
+let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
 
 
 //Affichage d'un texte à la place du panier et masquage du formulaire si le localStorage est vide
@@ -12,7 +12,6 @@ if (retrievingLocalStorage === null)
     document.querySelector("#deleteOrderedProducts").className = "invisible"
     document.querySelector("#orderForm").className = "invisible"
 } 
-
 else 
 {
     //-----------------------Affichage des produits dans le panier-----------------------
@@ -47,10 +46,12 @@ else
     //somme des prix totaux obtenus dans le tableau avec la méthode reduce
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const totalElement = totalArray.reduce(reducer)
-    console.log(totalElement);
-
+    
     //implémentation de la somme dans le DOM
     document.getElementById("totalOrderedProducts").textContent = totalElement + ".00 €"
+
+    //stockage du montant total du panier dans le localStorage
+    localStorage.setItem("orderPrice", JSON.stringify(totalElement + ".00 €"));
 
 
     //-----------------------Supression des produits du panier-----------------------
@@ -61,7 +62,7 @@ else
         event.preventDefault()
         
         //supprime l'ensemble des produits contenu dans le localStorage
-        localStorage.removeItem("product_id")
+        localStorage.removeItem("products")
 
         //fenetre d'alerte après suppression
         alert("L'ensemble des articles ont été supprimés du panier")
@@ -69,17 +70,15 @@ else
         //rechargement de la page panier
         window.location.href = "cart.html"  
     })
-
 }
 
 
-//-------------------Validation des données des données saisies dans le formulaire de commande-----------
-//Ecoute du bouton Valider ma commande et validation des données saisies puis envoie dans LocalStorage
+//-------------------Validation des données saisies dans le formulaire de commande puis envoi serveur-----------
 document.getElementById("validateOrderedForm").addEventListener("click", (event)=>
 {
     event.preventDefault()
     
-    //Création de l'object qui récupère les données saisies dans les champs
+    //Création de l'object qui récupère les données saisies dans les champs du formulaire
     const dataFormAdding =
     {
         firstName: document.getElementById("firstName").value,
@@ -89,7 +88,8 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
         city: document.getElementById("city").value
     }
         
-    //Vérification du format des données saisies grâce aux expressions régulières
+
+    //Vérification du format des données saisies grâce aux expressions régulières avec envoie dans LocalStorage
     const nameRegex = /^[A-Za-zàâçéèêëîïôûùü '-]{2,30}$/
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const cityRegex = /^[A-Za-z0-9-zàâçéèêëîïôûùü '-]{2,30}$/
@@ -109,4 +109,44 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
     {
         localStorage.setItem("contact", JSON.stringify(dataFormAdding))
     }
+
+    
+    //Récupération de l'objet contact et du tableau de string product_id 
+    let contact = dataFormAdding
+    let products = []
+    for (const dataProductretrieving of retrievingLocalStorage) 
+    {
+        products.push(dataProductretrieving.productId)
+    }
+   
+
+    //Envoi de l'objet et du tableau au serveur avec la requète POST
+    const requestOptions = 
+    {
+        method: 'POST',
+        body: JSON.stringify({contact, products}),
+        headers: {'content-type': 'application/json'},
+    }
+    
+
+    //Récupération du numéro de commande avec la méthode fetch et stockage dans localStorage
+      fetch("http://localhost:3000/api/cameras/order", requestOptions)
+        .then(response => 
+            {
+                console.log(response);
+                return response.json()
+            })
+            
+        .then(data => 
+            {  
+                localStorage.setItem("orderId", JSON.stringify(data.orderId))
+                window.location.href = "order.html"
+                localStorage.removeItem("products")
+                localStorage.removeItem("contact")
+            })
+
+        .catch(error => 
+            {
+                alert("Erreur de chargement des données :\n"+ error)
+            })
 })
