@@ -44,7 +44,7 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                 //Vérifie la selection d'une option (value)
                 if(productOption.value == "") 
                 {
-                    alert("Veuillez choissir votre lentille");
+                    alert("Veuillez choissir votre option : lentille");
                     return false;
                 }
                 else

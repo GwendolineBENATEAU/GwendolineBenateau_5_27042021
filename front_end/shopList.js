@@ -1,4 +1,4 @@
-//-------Affichage dynamique de tous les articles disponibles à la vente depuis l'API/cameras-----------
+//------------------- Affichage dynamique de tous les articles disponibles à la vente depuis l'API/cameras -----------
 
 //création d'une requette HTTP avec la méthode fetch et récupération des réponses avec then et catch
 fetch("http://localhost:3000/api/cameras")
@@ -30,7 +30,6 @@ fetch("http://localhost:3000/api/cameras")
             //retourne les données modifiées dans le DOM
             document.getElementById("listArticle").appendChild(cloneElement)
         }
- 
     })
     
     //renvoie une alerte sur l'interface utilisateur si la promesse est rejetée

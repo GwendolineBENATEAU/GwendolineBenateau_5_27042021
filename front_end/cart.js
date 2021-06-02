@@ -1,4 +1,4 @@
-//-------------------Affichage dynamique du panier contenant les produits précédement sélectionnés-----------
+//------------------- Affichage dynamique du panier contenant les produits précédement sélectionnés -----------
 
 //Récupération du contenu du localStorage en vue de son implémentation 
 let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
@@ -142,7 +142,6 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
                 localStorage.setItem("orderId", JSON.stringify(data.orderId))
                 window.location.href = "order.html"
                 localStorage.removeItem("products")
-                localStorage.removeItem("contact")
             })
 
         .catch(error => 
