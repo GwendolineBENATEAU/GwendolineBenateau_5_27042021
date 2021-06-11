@@ -19,8 +19,10 @@ else
         event.preventDefault()
 
         window.location.href = "index.html"
+        localStorage.removeItem("contact")
+        localStorage.removeItem("products")
         localStorage.removeItem("orderId")
         localStorage.removeItem("orderPrice")
-        localStorage.removeItem("contact")
+        
     })
 }

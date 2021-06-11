@@ -120,17 +120,15 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
     }
    
 
-    //Envoi de l'objet et du tableau au serveur avec la requète POST
-    const requestOptions = 
+    //Envoi de l'objet de contact et du tableau de produits au serveur avec la requête JSON/POST en 2e paramètre 
+    //de la méthode fetch qui va récupérée l'objet contact, le tableau produits et le numéro de commande : order_id (string) en réponse
+    //puis stockage des 3 dans localStorage
+      fetch("http://localhost:3000/api/cameras/order", 
     {
         method: 'POST',
         body: JSON.stringify({contact, products}),
         headers: {'content-type': 'application/json'},
-    }
-    
-
-    //Récupération du numéro de commande avec la méthode fetch et stockage dans localStorage
-      fetch("http://localhost:3000/api/cameras/order", requestOptions)
+    })
         .then(response => 
             {
                 console.log(response);
@@ -139,9 +137,10 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
             
         .then(data => 
             {  
+                localStorage.setItem("contact", JSON.stringify(data.contact))
+                localStorage.setItem("products", JSON.stringify(data.products))
                 localStorage.setItem("orderId", JSON.stringify(data.orderId))
                 window.location.href = "order.html"
-                localStorage.removeItem("products")
             })
 
         .catch(error => 
