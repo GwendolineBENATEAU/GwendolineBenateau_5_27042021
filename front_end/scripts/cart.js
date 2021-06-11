@@ -91,7 +91,7 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
     //Vérification du format des données saisies grâce aux expressions régulières avec envoie dans LocalStorage
     const nameRegex = /^[A-Za-zàâçéèêëîïôûùü '-]{2,30}$/
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    const addressRegex = /^[A-Z0-9a-z-zàâçéèêëîïôûùü -']{3,40}$/
+    const addressRegex = /^[A-Z0-9a-z-zàâçéèêëîïôûùü ',.\s-]{3,40}$/
     const cityRegex = /^[A-Za-zàâçéèêëîïôûùü ',.\s-]{3,25}$/
 
     if (!(
