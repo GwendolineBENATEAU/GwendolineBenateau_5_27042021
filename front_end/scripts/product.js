@@ -1,4 +1,4 @@
-//-------------------Affichage dynamique du produit précédement sélectionné depuis shopList.html et envoi au panier après personnalisation-----------
+//------------------- Affichage dynamique du produit précédement sélectionné depuis shopList.html et envoi au panier après personnalisation -----------
 
 //Récupération de l'id (?id=) dans l'URL de la page
 const searchId = new URL(window.location.href).searchParams.get("id")
@@ -44,15 +44,15 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                 //Vérifie la selection d'une option (value)
                 if(productOption.value == "") 
                 {
-                    alert("Veuillez choissir votre lentille");
+                    alert("Veuillez choissir l'option pour votre lentille");
                     return false;
                 }
                 else
                 { 
-                    //-----------------------Message de confirmation (ajout panier)--------------------- 
+                   //-----------------------Message de confirmation (ajout panier)--------------------- 
                     const messageProductAdding = () =>  
                     { 
-                        if (window.confirm("L'article a bien été ajouté au panier :\n Voir mon panier => OK :\n Continuer mes achats => ANNULER"))  
+                        if (window.confirm("Parfait ! L'article a bien été ajouté au panier :)\n\n\nJe souhaite finaliser ma commande => OK\n\nJe préfère continuer mes achats => ANNULER\n\n\n"))  
                         { 
                             window.location.href = "cart.html" 
                         }  
@@ -76,7 +76,8 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                     }
                         
                     
-                    //Stockage et lecture des objects JSON avec les méthodes stringify (stock) et parse (recupère)
+                    //Initialisation des 2 variables permettant 
+                    //le stockage et la relecture des objects JSON avec les méthodes stringify (stock) et parse (recupère)
                     let retrievingLocalStorage = JSON.parse(localStorage.getItem("products"))
                     
                     let storingLocalStorage = () =>
@@ -84,7 +85,6 @@ fetch(`http://localhost:3000/api/cameras/${searchId}`)
                         retrievingLocalStorage.push(dataProductAdding)
                         localStorage.setItem("products", JSON.stringify(retrievingLocalStorage))
                     }
-                    
                     
                     //Vérifie la présence de produits dans le localStorage puis (après bouclage) stockage des valeurs des produits supplémentaires 
                     if (retrievingLocalStorage) 
