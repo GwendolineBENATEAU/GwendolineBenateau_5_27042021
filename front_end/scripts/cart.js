@@ -23,7 +23,7 @@ else
         const cloneElement = document.importNode(templateElement.content, true)
 
         //association clone-data pour chaque produit commandé
-        cloneElement.getElementById("orderedProductName").textContent = dataProductretrieving.productName + " - Objectif  " + dataProductretrieving.productOption
+        cloneElement.getElementById("orderedProductName").textContent = dataProductretrieving.productName + " avec Objectif  " + dataProductretrieving.productOption
         cloneElement.getElementById("orderedProductQuantity").textContent = dataProductretrieving.productQuantity
         cloneElement.getElementById("orderedProductPriceUnit").textContent = parseInt(dataProductretrieving.productPrice, 10) + ".00 €"
         cloneElement.getElementById("orderedProductPriceTotal").textContent = parseInt(dataProductretrieving.productPrice, 10) * dataProductretrieving.productQuantity + ".00 €"
@@ -55,14 +55,13 @@ else
 
 
     //-----------------------Supression des produits du panier-----------------------
-    let deleteProduct = document.getElementById("deleteOrderedProducts")
-    
-    deleteProduct.addEventListener("click", (event)=>
+    document.getElementById("deleteOrderedProducts").addEventListener("click", (event)=>
     {
         event.preventDefault()
         
         //supprime l'ensemble des produits contenu dans le localStorage
         localStorage.removeItem("products")
+        localStorage.removeItem("orderPrice")
 
         //fenetre d'alerte après suppression
         alert("L'ensemble des articles ont été supprimés du panier")
@@ -92,13 +91,14 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
     //Vérification du format des données saisies grâce aux expressions régulières avec envoie dans LocalStorage
     const nameRegex = /^[A-Za-zàâçéèêëîïôûùü '-]{2,30}$/
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    const cityRegex = /^[A-Za-z0-9-zàâçéèêëîïôûùü '-]{2,30}$/
+    const addressRegex = /^[A-Z0-9a-z-zàâçéèêëîïôûùü -']{3,40}$/
+    const cityRegex = /^[A-Za-zàâçéèêëîïôûùü ',.\s-]{3,25}$/
 
     if (!(
         nameRegex.test(dataFormAdding.firstName)
         && nameRegex.test(dataFormAdding.lastName)
         && emailRegex.test(dataFormAdding.email)
-        && dataFormAdding.address.length > 3
+        && addressRegex.test(dataFormAdding.address)
         && cityRegex.test(dataFormAdding.city)
       ))
     {
@@ -111,7 +111,7 @@ document.getElementById("validateOrderedForm").addEventListener("click", (event)
     }
 
     
-    //Récupération de l'objet contact et du tableau de string product_id 
+    //Récupération de l'objet contact et du tableau de string product 
     let contact = dataFormAdding
     let products = []
     for (const dataProductretrieving of retrievingLocalStorage) 
