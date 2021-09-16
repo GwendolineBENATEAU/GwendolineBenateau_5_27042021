@@ -36,7 +36,7 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 - CSS/BOOTSTRAP 5
 - JAVASCRIPT
 - Font Awesome 
-- Optimisation SEO - WCAG et analyse des performances
+- Optimisation SEO, WCAG et analyse des performances
 - Validation W3C
 - Compatibilité Chrome et Firefox (dernières versions)
 
