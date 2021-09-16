@@ -6,7 +6,7 @@ Orinoco est le 5e projet fictif à caractère pédagique de la formation de Dév
 
 ## Description du projet
 ### Scénario
-Orinoco est une entreprise de commerce en ligne. Son credo ? Se démarquer des grands site e-commerce comme Amazon en créant des applications thématiques ne vendant qu’un seul groupe de produits ; Oribook pour les livres, Oritextil pour les vêtements... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_P%C3%A9rim%C3%A8treDuProjet_DW-OpenClassrooms.pdf))
+Orinoco est une entreprise de commerce en ligne. Son credo ? Se démarquer des grands sites de e-commerce comme Amazon en créant des applications thématiques ne vendant qu’un seul groupe de produits ; Oribook pour les livres, Oritextil pour les vêtements... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_P%C3%A9rim%C3%A8treDuProjet_DW-OpenClassrooms.pdf))
 
 ### Documentation 
 [Spécifications fonctionnelles et techniques](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_Spe%CC%81cificationsFonctionnelles_Orinoco.pdf) d'Orinoco.
