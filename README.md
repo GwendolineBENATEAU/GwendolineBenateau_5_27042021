@@ -32,7 +32,7 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 - [VisualStudioCode](https://code.visualstudio.com/) - Editeur de texte open source
 - [GitKraken](https://www.gitkraken.com/) - Outil de versionning (client)
 
-## Stack technique et add-on
+## Stack technique front et add-on
 - HTML 5
 - CSS/BOOTSTRAP 5
 - JAVASCRIPT
