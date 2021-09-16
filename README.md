@@ -22,12 +22,11 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 
 ## Conditions préalables
 - [Node.js et npm](https://nodejs.org/fr/)   
-
-## Installation du serveur
-1. Cloner l'ensemble du [dépôt](https://github.com/OpenClassrooms-Student-Center/JWDP5) GitHub du serveur principal (backend)
-2. À partir du dossier du projet, installer les dépendances en exécutant ``npm install`` 
-3. Vous pouvez ensuite démarrer le serveur avec ``node server``
-_Le serveur doit fonctionner en localhost sur le port 3000_
+- Installation du serveur
+  1. Cloner l'ensemble du [dépôt](https://github.com/OpenClassrooms-Student-Center/JWDP5) GitHub du serveur principal (backend)
+  2. À partir du dossier du projet, installer les dépendances en exécutant ``npm install`` 
+  3. Vous pouvez ensuite démarrer le serveur avec ``node server``
+  _Le serveur doit fonctionner en localhost sur le port 3000_
 
 ## Outils de développement
 - [VisualStudioCode](https://code.visualstudio.com/) - Editeur de texte open source
