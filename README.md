@@ -21,7 +21,7 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 - Gérer des événements JavaScript
 
 ## Conditions préalables
-- [Node.js et npm](https://nodejs.org/fr/)   
+- [Node.js et npm](https://nodejs.org/fr/) - Environnement d’exécution JavaScript 
 - Installation du serveur
   1. Cloner l'ensemble du [dépôt](https://github.com/OpenClassrooms-Student-Center/JWDP5) GitHub du serveur principal (backend)
   2. À partir du dossier du projet, installer les dépendances en exécutant ``npm install`` 
