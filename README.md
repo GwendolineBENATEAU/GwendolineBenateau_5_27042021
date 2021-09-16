@@ -12,7 +12,7 @@ Orinoco est une entreprise de commerce en ligne. Son credo ? Se démarquer des g
 [Spécifications fonctionnelles et techniques](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_Spe%CC%81cificationsFonctionnelles_Orinoco.pdf) d'Orinoco.
 
 ### Objectif
-Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'application, en JavaScript, sans frameworks ni bibliothèque JavaScript (Jquery, React, Angular, Vue...) et rédaction d'un [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_PlanDeTests_Orinoco.pdf).
+Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'application, en JavaScript, sans frameworks ni bibliothèque JavaScript (Jquery, React, Angular, Vue...) et rédaction d'un plan de tests.
 
 ### Compétences évaluées
 - Créer un plan de test pour une application
@@ -42,7 +42,8 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 - Compatibilité Chrome et Firefox (dernières versions)
 
 ## Présentation
-- Visualisation du prototype en ligne sur [GitHub Page](https://gwendolinebenateau.github.io/GwendolineBenateau_5_27042021_Orinoco/front_end/index.html) une fois le backend lancé
+- Visualisation du MVP en ligne sur [GitHub Page](https://gwendolinebenateau.github.io/GwendolineBenateau_5_27042021_Orinoco/front_end/index.html) une fois le backend lancé
+et du [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_PlanDeTests_Orinoco.pdf)
 - Diaporama de présentation du projet [Orinoco](https://www.canva.com/design/DAEgW8uBZxs/zrjB1ezrVQds_Bx3vOoFkg/view?utm_content=DAEgW8uBZxs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## Auteurs
