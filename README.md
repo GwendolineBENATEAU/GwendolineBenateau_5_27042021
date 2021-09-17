@@ -6,13 +6,13 @@ Orinoco est le 5e projet fictif à caractère pédagique de la formation de Dév
 
 ## Description du projet
 ### Scénario
-Orinoco est une entreprise de commerce en ligne. Son credo ? Se démarquer des grands site e-commerce comme Amazon en créant des applications thématiques ne vendant qu’un seul groupe de produits ; Oribook pour les livres, Oritextil pour les vêtements... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_P%C3%A9rim%C3%A8treDuProjet_DW-OpenClassrooms.pdf))
+Orinoco est une entreprise de commerce en ligne. Son credo ? Se démarquer des grands sites de e-commerce comme Amazon en créant des applications thématiques ne vendant qu’un seul groupe de produits ; Oribook pour les livres, Oritextil pour les vêtements... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_P%C3%A9rim%C3%A8treDuProjet_DW-OpenClassrooms.pdf))
 
 ### Documentation 
 [Spécifications fonctionnelles et techniques](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_Spe%CC%81cificationsFonctionnelles_Orinoco.pdf) d'Orinoco.
 
 ### Objectif
-Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'application, en JavaScript, sans frameworks ni bibliothèque JavaScript (Jquery, React, Angular, Vue...) et rédaction d'un [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_PlanDeTests_Orinoco.pdf).
+Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'application, en JavaScript, sans frameworks ni bibliothèque JavaScript (Jquery, React, Angular, Vue...) et rédaction d'un plan de tests.
 
 ### Compétences évaluées
 - Créer un plan de test pour une application
@@ -21,29 +21,28 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
 - Gérer des événements JavaScript
 
 ## Conditions préalables
-- [Node.js et npm](https://nodejs.org/fr/)   
-
-## Installation du serveur
-1. Cloner l'ensemble du [dépôt](https://github.com/OpenClassrooms-Student-Center/JWDP5) GitHub du serveur principal (backend)
-2. À partir du dossier du projet, installer les dépendances en exécutant ``npm install`` 
-3. Vous pouvez ensuite démarrer le serveur avec ``node server``
-_Le serveur doit fonctionner en localhost sur le port 3000_
+- [Node.js et npm](https://nodejs.org/fr/) - Environnement d’exécution JavaScript (à) installé(er) localement sur votre machine
+- Installation du serveur principal (backend) :
+  1. Cloner l'ensemble du [dépôt GitHub du serveur](https://github.com/OpenClassrooms-Student-Center/JWDP5) 
+  2. À partir du dossier du projet, installer les dépendances en exécutant ``npm install`` 
+  3. Vous pouvez ensuite démarrer le serveur avec ``node server`` _(le serveur doit fonctionner en localhost sur le port 3000)_
 
 ## Outils de développement
 - [VisualStudioCode](https://code.visualstudio.com/) - Editeur de texte open source
 - [GitKraken](https://www.gitkraken.com/) - Outil de versionning (client)
 
-## Stack technique et add-on
+## Stack technique front et add-on
 - HTML 5
 - CSS/BOOTSTRAP 5
 - JAVASCRIPT
 - Font Awesome 
-- Optimisation SEO - WCAG et analyse des performances
+- Optimisation SEO, WCAG et analyse des performances
 - Validation W3C
 - Compatibilité Chrome et Firefox (dernières versions)
 
-## Présentation
-- Visualisation du prototype en ligne sur [GitHub Page](https://gwendolinebenateau.github.io/GwendolineBenateau_5_27042021_Orinoco/front_end/index.html) une fois le backend lancé
+## Présentation du projet
+- Visualisation du MVP en ligne sur [GitHub Page](https://gwendolinebenateau.github.io/GwendolineBenateau_5_27042021_Orinoco/front_end/index.html) (une fois le backend lancé)
+et du [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_PlanDeTests_Orinoco.pdf)
 - Diaporama de présentation du projet [Orinoco](https://www.canva.com/design/DAEgW8uBZxs/zrjB1ezrVQds_Bx3vOoFkg/view?utm_content=DAEgW8uBZxs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## Auteurs
