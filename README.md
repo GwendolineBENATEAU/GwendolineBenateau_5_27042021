@@ -28,7 +28,7 @@ Réalisation d'un MVP du site e-commerce Orinoco pour la partie front de l'appli
   3. Vous pouvez ensuite démarrer le serveur avec ``node server`` <br/>
 
 
-_A noter : le serveur doit fonctionner en localhost sur le port 3000. Si vous rencontrer des difficultés, voici le [dépôt GitHub](https://github.com/OpenClassrooms-Student-Center/JWDP5) initial du serveur_
+_A noter : le serveur doit fonctionner en localhost sur le port 3000. Si vous rencontrez des difficultés, voici le [dépôt GitHub](https://github.com/OpenClassrooms-Student-Center/JWDP5) initial du serveur_
 
 ## Outils de développement
 - [VisualStudioCode](https://code.visualstudio.com/) - Editeur de texte open source
