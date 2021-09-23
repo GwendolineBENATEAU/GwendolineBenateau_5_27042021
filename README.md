@@ -49,6 +49,6 @@ et du [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5
 - Diaporama de présentation du projet [Orinoco](https://www.canva.com/design/DAEgW8uBZxs/zrjB1ezrVQds_Bx3vOoFkg/view?utm_content=DAEgW8uBZxs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## Auteurs
-Gwendoline Bénteau
+Gwendoline Bénateau
 
 [![forthebadge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GwendolineBENATEAU) [![forthebadge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/web_doline/) [![forthebadge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gwendoline-benateau-18986412b/)
