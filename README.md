@@ -2,7 +2,7 @@
 
 
 # Orinoco 
-Orinoco est le 5e projet fictif à caractère pédagique de la formation de Dévéloppeur Web (OpenClassRooms) qui consiste à construire un site e-commerce.
+Orinoco est le 5e projet fictif à caractère pédagogique de la formation de Développeur Web (OpenClassRooms) qui consiste à construire un site e-commerce.
 
 ## Description du projet
 ### Scénario
