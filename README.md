@@ -47,6 +47,8 @@ _A noter : le serveur doit fonctionner en localhost sur le port 3000. Si vous re
 - Visualisation du MVP en ligne sur [GitHub Page](https://gwendolinebenateau.github.io/GwendolineBenateau_5_27042021_Orinoco/front_end/index.html) (une fois le backend lancé)
 et du [plan de tests](https://github.com/GwendolineBENATEAU/GwendolineBenateau_5_27042021_Orinoco/blob/master/documentation/P5_PlanDeTests_Orinoco.pdf)
 - Diaporama de présentation du projet [Orinoco](https://www.canva.com/design/DAEgW8uBZxs/zrjB1ezrVQds_Bx3vOoFkg/view?utm_content=DAEgW8uBZxs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+- Appréciation de l'évaluateur : 
+> *"Bonne voire très bonne réalisation. Le socle en JavaScript est solide. Les livrables sont de bon niveau et conforme aux attentes."* - Benoît Prieur
 
 ## Auteurs
 Gwendoline Bénateau
